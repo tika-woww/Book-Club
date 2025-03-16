@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Buku</title>
+    <link rel="stylesheet" href="css/star-rating-svg.css">
+    <link rel="stylesheet" href="css/style-detail-buku.css">
+</head>
+<body>
+    <div class="circle red1"></div>
+    <div class="circle yellow1"></div>
+    <div class="circle yellow2"></div>
+    <div class="circle red2"></div>
+
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <img src="asset/image/Logo.png" alt="" class="logo">
+                <button onclick=toggleSidebar() id="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+                </button>
+            </li>
+            <li class="active">
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M5 19v-8.692q0-.384.172-.727t.474-.565l5.385-4.078q.423-.323.966-.323t.972.323l5.385 4.077q.303.222.474.566q.172.343.172.727V19q0 .402-.299.701T18 20h-3.384q-.344 0-.576-.232q-.232-.233-.232-.576v-4.769q0-.343-.232-.575q-.233-.233-.576-.233h-2q-.343 0-.575.233q-.233.232-.233.575v4.77q0 .343-.232.575T9.385 20H6q-.402 0-.701-.299T5 19"/></svg>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M8.672 7.542h6.656c3.374 0 5.062 0 6.01.987s.724 2.511.278 5.56l-.422 2.892c-.35 2.391-.525 3.587-1.422 4.303s-2.22.716-4.867.716h-5.81c-2.646 0-3.97 0-4.867-.716s-1.072-1.912-1.422-4.303l-.422-2.892c-.447-3.049-.67-4.573.278-5.56s2.636-.987 6.01-.987M8 18c0-.414.373-.75.833-.75h6.334c.46 0 .833.336.833.75s-.373.75-.833.75H8.833c-.46 0-.833-.336-.833-.75" clip-rule="evenodd"/><path fill="currentColor" d="M8.51 2h6.98c.233 0 .41 0 .567.015c1.108.109 2.014.775 2.399 1.672H5.544c.385-.897 1.292-1.563 2.4-1.672C8.099 2 8.278 2 8.51 2" opacity="0.4"/><path fill="currentColor" d="M6.31 4.723c-1.39 0-2.53.84-2.91 1.953l-.024.07a8 8 0 0 1 1.232-.253c1.08-.138 2.446-.138 4.032-.138h6.892c1.586 0 2.952 0 4.032.138c.42.054.834.133 1.232.253l-.023-.07c-.38-1.114-1.52-1.953-2.911-1.953z" opacity="0.7"/></svg>
+                    <span>Library</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path fill="currentColor" d="M495.9 166.6c3.2 8.7.5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4l-55.6 17.8c-8.8 2.8-18.6.3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4c-1.1-8.4-1.7-16.9-1.7-25.5s.6-17.1 1.7-25.4l-43.3-39.4c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160a80 80 0 1 0 0 160"/></svg>
+                    <span>Setting</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="M15 12H2m0 0l3.5-3M2 12l3.5 3"/><path d="M9.002 7c.012-2.175.109-3.353.877-4.121C10.758 2 12.172 2 15 2h1c2.829 0 4.243 0 5.122.879C22 3.757 22 5.172 22 8v8c0 2.828 0 4.243-.878 5.121c-.769.769-1.947.865-4.122.877M9.002 17c.012 2.175.109 3.353.877 4.121c.641.642 1.568.815 3.121.862"/></g></svg>
+                    <span>Login</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="top-content">
+            <div class="search-bar">
+                <img src="asset/image/Search.svg" alt="">
+                <input type="text" name="Search" id="" placeholder="Search Book or Author">
+            </div>
+            <div class="login">
+                <a href="">Login</a>
+                <img src="asset/image/Bell.svg" alt="">
+            </div>
+        </div>
+        <div class="buku">
+            <img src="asset/image/Sampul Buku (4).png" alt="" class="sampul-buku">
+            <div class="detail-buku">
+                <span>The Jack Reaper</span>
+                <h5>By Tika</h5>
+                <div class="keterangan">
+                    <div class="rating">
+                        <div class="my-rating1"></div>
+                        <h6>13.560 rating</h6>
+                    </div>
+                    <div class="jumlah-dibaca">
+                        <img src="asset/image/Jumlah Dilihat.svg" alt="">
+                        <h6>3.5 K</h6>
+                    </div>
+                    <div class="jumlah-bab">
+                        <img src="asset/image/Jumlah Bab.svg" alt="">
+                        <h6>13 Bab</h6>
+                    </div>
+                </div>
+                <div class="button">
+                    <div class="like">
+                        <img src="asset/image/Like.svg" alt="">
+                        <span>Like</span>
+                    </div>
+                    <div class="mulai-baca">
+                        <img src="asset/image/Baca Sekarang.svg" alt="">
+                        <span>Mulai Baca</span>
+                    </div>
+                    <div class="library">
+                        <img src="asset/image/Plus.svg" alt="">
+                        <span>Tambah Library</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="sinopsis">Dalam buku terakhir dari seri The Chronicles of Narnia, tanah Narnia yang dahulu damai kini menghadapi ancaman terbesar. Seekor kera licik bernama Shift memanfaatkan kepercayaan para Narnians dengan berpura-pura memiliki perintah dari Aslan. Dengan bantuan keledai bernama Puzzle, yang dipaksa mengenakan kulit singa, Shift menipu rakyat Narnia dan membawa kehancuran pada negeri yang indah itu. <br> <br>Sementara itu, Raja Tirian, penguasa terakhir Narnia, berjuang untuk menyelamatkan kerajaannya dari kebohongan dan pengkhianatan. Dengan bantuan Jill Pole dan Eustace Scrubb, dua anak manusia yang kembali ke Narnia, mereka bertempur melawan pasukan yang dipimpin oleh Telmarines dan Calormenes. <br> <br>Namun, pertempuran ini bukan hanya soal mempertahankan tanah Narnia, tetapi juga ujian bagi iman dan kepercayaan mereka kepada Aslan. Akankah kebaikan menang atas kejahatan? Dan apa yang menanti Narnia di akhir dari semua peristiwa ini?
+        </span>
+        <div class="genre">
+            <span>Genre</span>
+            <div class="kategori-buku">
+                <div class="kategori jenis">Novel</div>
+                <div class="kategori genre">Horor</div>
+                <div class="kategori jenis">Novel</div>
+                <div class="kategori genre">Horor</div>
+            </div>
+        </div>
+        <div class="daftar-isi">
+            <span>Daftar Isi</span>
+            <div class="isi">
+                <span>Apa itu cinta?</span>
+                <span>Kamis 4 April 2024</span>
+            </div>
+            <hr>
+            <div class="isi">
+                <span>Apa itu cinta?</span>
+                <span>Kamis 4 April 2024</span>
+            </div>
+            <hr>
+            <div class="isi">
+                <span>Apa itu cinta?</span>
+                <span>Kamis 4 April 2024</span>
+            </div>
+            <hr>
+            <div class="isi">
+                <span>Apa itu cinta?</span>
+                <span>Kamis 4 April 2024</span>
+            </div>
+            <hr>
+        </div>
+        <div class="rating-buku">
+            <span>Rating</span>
+            <div class="my-rating"></div>
+        </div>
+        <div class="rekomendasi">
+            <span>Rekomendasi Buku Lainnya</span>
+            <div class="kumpulan-buku">
+                <a href="buku-terbaru.html" class="buku1">
+                <div class="rating1">
+                        <img src="asset/image/Bintang Kuning.svg" alt="">
+                        <span>4.5</span>
+                    </div>
+                    <img src="asset/image/Sampul Buku (1).png" alt="" class="sampul-buku">
+                    <div class="kategori-buku">
+                        <div class="kategori jenis">Novel</div>
+                        <div class="kategori genre">Horor</div>
+                    </div>
+                    <h4>Harry Poter</h4>
+                    <span>By Tika</span>
+                </a>
+                <a href="" class="buku1">
+                <div class="rating1">
+                        <img src="asset/image/Bintang Kuning.svg" alt="">
+                        <span>4.5</span>
+                    </div>
+                    <img src="asset/image/Sampul Buku (1).png" alt="" class="sampul-buku">
+                    <div class="kategori-buku">
+                        <div class="kategori jenis">Novel</div>
+                        <div class="kategori genre">Horor</div>
+                    </div>
+                    <h4>Harry Poter</h4>
+                    <span>By Tika</span>
+                </a>
+                <a href="" class="buku1">
+                <div class="rating1">
+                        <img src="asset/image/Bintang Kuning.svg" alt="">
+                        <span>4.5</span>
+                    </div>
+                    <img src="asset/image/Sampul Buku (1).png" alt="" class="sampul-buku">
+                    <div class="kategori-buku">
+                        <div class="kategori jenis">Novel</div>
+                        <div class="kategori genre">Horor</div>
+                    </div>
+                    <h4>Harry Poter</h4>
+                    <span>By Tika</span>
+                </a>
+                <a href="" class="buku1">
+                <div class="rating1">
+                        <img src="asset/image/Bintang Kuning.svg" alt="">
+                        <span>4.5</span>
+                    </div>
+                    <img src="asset/image/Sampul Buku (1).png" alt="" class="sampul-buku">
+                    <div class="kategori-buku">
+                        <div class="kategori jenis">Novel</div>
+                        <div class="kategori genre">Horor</div>
+                    </div>
+                    <h4>Harry Poter</h4>
+                    <span>By Tika</span>
+                </a>
+                <a href="" class="buku1">
+                <div class="rating1">
+                        <img src="asset/image/Bintang Kuning.svg" alt="">
+                        <span>4.5</span>
+                    </div>
+                    <img src="asset/image/Sampul Buku (1).png" alt="" class="sampul-buku">
+                    <div class="kategori-buku">
+                        <div class="kategori jenis">Novel</div>
+                        <div class="kategori genre">Horor</div>
+                    </div>
+                    <h4>Harry Poter</h4>
+                    <span>By Tika</span>
+                </a>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.star-rating-svg.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(".my-rating1").starRating({
+                readOnly: true,
+                totalStars: 5,
+                starShape: 'rounded',
+                starSize: 20,
+                initialRating: 4.5
+            })
+        })
+
+        $(document).ready(function() {
+            $(".my-rating").starRating({
+                totalStars: 5,
+                starShape: 'rounded',
+                starSize: 30,
+                emptyColor: 'lightgray',
+                hoverColor: 'salmon',
+                activeColor: 'crimson',
+                callback:function(currentRating){
+                    alert("Kamu beri rating " + currentRating + "⭐")
+                }
+            })
+        })
+    </script>
+</body>
+</html>
