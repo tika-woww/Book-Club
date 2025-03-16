@@ -1,0 +1,28 @@
+Warna yang digunakan
+
+Warna Utama Background
+#FDF0EA
+
+Warna Merah Circle
+#FFCBCA
+
+Warna Kuning Circle
+#FFEAC2
+
+Warna Pink Font dan Background
+#F55D5B
+
+Warna Font Abu
+#8F8F8F
+
+Warna Font Side Bar
+#333
+
+Warna Font Content 
+Black
+
+Warna Background Buku Terakhir Di Baca
+1. #B1C8C1, #285359
+2. #FCDEE0, #DB878A
+3. #AF5B8D, #562E6D
+4. #FBF2B2, #53839F

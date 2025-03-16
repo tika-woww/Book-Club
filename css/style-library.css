@@ -1,0 +1,344 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../asset/font/Poppins/Poppins-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-Thin';
+    src: url('../asset/font/Poppins/Poppins-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../asset/font/Lora/static/Lora-Medium.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lora-Thin';
+    src: url('../asset/font/Lora/Lora-VariableFont_wght.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root{
+    --base-color: #FDF0EA;
+    --red-color: #f55d5a;
+    --yellow-color: #e2af50;
+    --pink-font: #F55D5B;
+    --gray-font: #8F8F8F;
+    --sidebar-font: #333;
+    --font: #0000;
+    --hover-color: #f8d8a2ca;
+    --progress-bar-background: #e1e1e1;
+    --judul-besar-awal-stroke: #d2d2d2;
+}
+
+@keyframes MoveRight {
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(200px);
+    }
+    50%{
+        transform: translateY(-100px);
+    }
+    75%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes MoveLeft {
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(-200px);
+    }
+    50%{
+        transform: translateY(100px);
+    }
+    75%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+body{
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    background-color: #FDF0EA;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+#sidebar{
+    box-sizing: border-box;
+    height: 100vh;
+    width: 18vw;
+    padding: 5px 1em;
+    background-color: var(--base-color);
+
+    position: sticky;
+    top: 0;
+    align-self: start;
+    transition: 300ms ease-in-out;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+#sidebar.close{
+    padding: 5px;
+    width: 6vw;
+}
+
+#sidebar ul{
+    list-style: none;
+    padding-left: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#sidebar > ul > li:first-child{
+    display: flex;
+    flex-direction: flex-end;
+    margin-bottom: 16px;
+    align-items: center;
+    .logo{
+        width: 10vw;
+    }
+}
+
+#sidebar ul li.active a{
+    color: var(--pink-font);
+    svg{
+        fill: var(--pink-font);
+    }
+}
+
+#sidebar a{
+    font-family: 'Poppins';
+    border-radius: .5em;
+    padding: .85em;
+    text-decoration: none;
+    color: var(--sidebar-font);
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+#sidebar svg{
+    flex-shrink: 0;
+    fill: var(--sidebar-font);
+}
+
+#sidebar a:hover{
+    background-color: var(--hover-color);
+}
+
+#toggle-btn{
+    margin-left: 1em;
+    padding: .5em;
+    border: none;
+    border-radius: .5em;
+    background: none;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+}
+
+#toggle-btn.rotate{
+    transform: translateX(-130px);
+
+    svg{
+        transform: rotate(180deg);
+    }
+}
+
+#toggle-btn:hover{
+    background-color:var(--hover-color) ;
+}
+
+.circle{
+    position: absolute;
+    width: 30vw;
+    height: 30vh;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.red1{
+    background: var(--red-color);
+    top: 10%;
+    left: 10%;
+    animation: MoveRight 5s infinite ease-in-out;
+}
+
+.red2{
+    background: var(--red-color);
+    top: 80%;
+    right: -10%;
+    animation: MoveLeft 5s infinite ease-in-out;
+}
+
+.yellow1{
+    background: var(--yellow-color);
+    top: 30%;
+    right: -10%;
+    animation: MoveLeft 5s infinite ease-in-out;
+}
+
+.yellow2{
+    background: var(--yellow-color);
+    top: 60%;
+    left: 10%;
+    animation: MoveRight 5s infinite ease-in-out;
+}
+
+main{
+    margin: 3vw 3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.top-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-content .search-bar{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.top-content .search-bar input{
+    font-family: 'Poppins';
+    background: transparent;
+    border: none;
+    color: var(--gray-font);
+}
+
+.top-content .login{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.top-content .login a{
+    text-decoration: none;
+    font-family: 'Poppins';
+    color: var(--gray-font);
+    font-size: .9rem;
+}
+
+.judul{
+    margin-top: 1vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.judul h1{
+    margin: 0;
+    font-family: 'Lora-Thin';
+    letter-spacing: 1px;
+}
+
+.judul span{
+    font-family: 'Poppins-Thin';
+    font-size: .9rem;
+}
+
+.bukunya{
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.kumpulan-buku{
+    display: flex;
+    justify-content: space-between;
+}
+
+.kumpulan-buku .buku{
+    text-decoration: none;
+    color: var(--sidebar-font);
+}
+
+.kumpulan-buku .buku .rating{
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins-Thin';
+    background: white;
+    width: max-content;
+    padding: .2vw;
+    border-radius: 5px;
+    gap: .1vw;
+    position: absolute;
+    margin-top: 35vh;
+    margin-left: 1.5vw;
+    font-size: .8rem;
+}
+
+.kumpulan-buku .buku .sampul-buku{
+    width: 12vw;
+    height: 43vh;
+}
+
+.kumpulan-buku .buku .kategori-buku{
+    display: flex;
+    gap: .5vw;
+    font-family: 'Poppins';
+    font-size: .8rem;
+    margin-top: 1vh;
+}
+
+.kumpulan-buku .buku .kategori-buku .jenis{
+    padding: .1vh .8vw;
+    background-color: var(--pink-font);
+    border-radius: 20px;
+    color: white;
+}
+
+.kumpulan-buku .buku .kategori-buku .genre{
+    padding: .1vh .8vw;
+    background-color: var(--yellow-color);
+    border-radius: 20px;
+    color: var(--sidebar-font);
+}
+
+.kumpulan-buku .buku h4{
+    margin: 0;
+    font-family: 'Lora-Thin';
+    letter-spacing: .5px;
+    font-size: .9rem;
+    margin-top: 1vh;
+}
+
+.kumpulan-buku .buku span{
+    font-family: 'Poppins-Thin';
+    margin-top: .5vh;
+    font-size: .8rem;
+}
